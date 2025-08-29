@@ -380,6 +380,181 @@ Django settings for Eco_Trio_Main project.
 
 
 
+# import os
+# from pathlib import Path
+# import dj_database_url
+# from dotenv import load_dotenv
+
+# # Load environment variables
+# load_dotenv()
+
+# BASE_DIR = Path(__file__).resolve().parent.parent
+
+# # SECURITY WARNING: keep the secret key used in production secret!
+# SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'dev-secret-key')
+
+# # SECURITY WARNING: don't run with debug turned on in production!
+# DEBUG = os.environ.get('DEBUG', 'False') == 'True'
+
+# # Allowed hosts and CSRF settings for Render
+# RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
+
+# ALLOWED_HOSTS = []
+# CSRF_TRUSTED_ORIGINS = []
+
+# if RENDER_EXTERNAL_HOSTNAME:
+#     ALLOWED_HOSTS += [
+#         RENDER_EXTERNAL_HOSTNAME,   # Render hostname
+#         'ecotrio.in',               # Your domain
+#         'www.ecotrio.in'            # www version
+#     ]
+#     CSRF_TRUSTED_ORIGINS += [
+#         f"https://{RENDER_EXTERNAL_HOSTNAME}",
+#         "https://ecotrio.in",
+#         "https://www.ecotrio.in"
+#     ]
+
+# # Optional: Allow localhost in debug mode
+# if DEBUG:
+#     ALLOWED_HOSTS += ['localhost', '127.0.0.1']
+#     CSRF_TRUSTED_ORIGINS += [
+#         'http://localhost:8000',
+#         'http://127.0.0.1:8000'
+#     ]
+
+# # Application definition
+# INSTALLED_APPS = [
+#     'django.contrib.admin',
+#     'django.contrib.auth',
+#     'django.contrib.contenttypes',
+#     'django.contrib.sessions',
+#     'django.contrib.messages',
+#     'django.contrib.staticfiles',
+
+#     # Local apps
+#     'Eco_Trio_Sub',
+
+#     # Third-party apps
+#     'storages',
+#     'allauth',
+#     'allauth.account',
+#     'allauth.socialaccount',
+#     'allauth.socialaccount.providers.google',
+#     'whitenoise.runserver_nostatic',
+# ]
+
+# AUTHENTICATION_BACKENDS = [
+#     'django.contrib.auth.backends.ModelBackend',
+#     'allauth.account.auth_backends.AuthenticationBackend',
+# ]
+
+# MIDDLEWARE = [
+#     'django.middleware.security.SecurityMiddleware',
+#     'whitenoise.middleware.WhiteNoiseMiddleware',
+#     'django.contrib.sessions.middleware.SessionMiddleware',
+#     'django.middleware.common.CommonMiddleware',
+#     'django.middleware.csrf.CsrfViewMiddleware',
+#     'django.contrib.auth.middleware.AuthenticationMiddleware',
+#     'django.contrib.messages.middleware.MessageMiddleware',
+#     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+#     'allauth.account.middleware.AccountMiddleware',
+# ]
+
+# ROOT_URLCONF = 'Eco_Trio_Main.urls'
+
+# TEMPLATES = [
+#     {
+#         'BACKEND': 'django.template.backends.django.DjangoTemplates',
+#         'DIRS': [os.path.join(BASE_DIR, 'Eco_Trio_Sub/templates')],
+#         'APP_DIRS': True,
+#         'OPTIONS': {
+#             'context_processors': [
+#                 'django.template.context_processors.debug',
+#                 'django.template.context_processors.request',
+#                 'django.contrib.auth.context_processors.auth',
+#                 'django.contrib.messages.context_processors.messages',
+#             ],
+#         },
+#     },
+# ]
+
+# WSGI_APPLICATION = 'Eco_Trio_Main.wsgi.application'
+
+# # Database settings
+# DATABASE_URL = os.environ.get('DATABASE_URL')
+
+# if DATABASE_URL:
+#     DATABASES = {
+#         'default': dj_database_url.config(
+#             default=DATABASE_URL,
+#             conn_max_age=600,
+#             conn_health_checks=True,
+#             ssl_require=True  # Force SSL for Render Postgres
+#         )
+#     }
+# else:
+#     DATABASES = {
+#         'default': {
+#             'ENGINE': 'django.db.backends.sqlite3',
+#             'NAME': BASE_DIR / 'db.sqlite3',
+#         }
+#     }
+
+# # Password validation
+# AUTH_PASSWORD_VALIDATORS = [
+#     {'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator'},
+#     {'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator'},
+#     {'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator'},
+#     {'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator'},
+# ]
+
+# # Social Account Providers
+# SOCIALACCOUNT_PROVIDERS = {
+#     'google': {
+#         'APP': {
+#             'client_id': os.environ.get('GOOGLE_CLIENT_ID'),
+#             'secret': os.environ.get('GOOGLE_CLIENT_SECRET'),
+#         },
+#         'SCOPE': ['profile', 'email'],
+#         'AUTH_PARAMS': {'access_type': 'offline'},
+#         'METHOD': 'oauth2',
+#         'VERIFY_EMAIL': True,
+#     }
+# }
+
+# # Internationalization
+# LANGUAGE_CODE = 'en-us'
+# TIME_ZONE = 'UTC'
+# USE_I18N = True
+# USE_TZ = True
+
+# # Static files
+# STATIC_URL = '/static/'
+# STATICFILES_DIRS = [BASE_DIR / 'Eco_Trio_Sub' / 'static']
+# STATIC_ROOT = BASE_DIR / 'staticfiles'
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+# # Media files
+# MEDIA_URL = '/media/'
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# # Email settings
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_HOST = 'smtp.gmail.com'
+# EMAIL_PORT = 587
+# EMAIL_USE_TLS = True
+# EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER', 'ecotriosolutionweb@gmail.com')
+# EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD', 'xaaq jgsx lizd tgqk')
+# ADMIN_EMAIL = EMAIL_HOST_USER
+# DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+
+# # Authentication settings
+# SOCIALACCOUNT_LOGIN_ON_GET = True
+# LOGIN_REDIRECT_URL = '/home/'
+
+# DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
 import os
 from pathlib import Path
 import dj_database_url
@@ -394,27 +569,33 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'dev-secret-key')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get('DEBUG', 'False') == 'True'
+DEBUG = os.environ.get('DEBUG', 'True') == 'True'  # Default True for local dev
 
-# Allowed hosts and CSRF settings for Render
+# Allowed hosts and CSRF settings
 RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
+
+# Production domains (update with your domains)
+PRODUCTION_HOSTS = [
+    'ecotrio.com',
+    'www.ecotrio.com',
+    'ecotrio.in',
+    'www.ecotrio.in'
+]
 
 ALLOWED_HOSTS = []
 CSRF_TRUSTED_ORIGINS = []
 
+# Add Render hostname if it exists
 if RENDER_EXTERNAL_HOSTNAME:
-    ALLOWED_HOSTS += [
-        RENDER_EXTERNAL_HOSTNAME,   # Render hostname
-        'ecotrio.in',               # Your domain
-        'www.ecotrio.in'            # www version
-    ]
-    CSRF_TRUSTED_ORIGINS += [
-        f"https://{RENDER_EXTERNAL_HOSTNAME}",
-        "https://ecotrio.in",
-        "https://www.ecotrio.in"
-    ]
+    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
+    CSRF_TRUSTED_ORIGINS.append(f"https://{RENDER_EXTERNAL_HOSTNAME}")
 
-# Optional: Allow localhost in debug mode
+# Add production domains (always included)
+ALLOWED_HOSTS.extend(PRODUCTION_HOSTS)
+for host in PRODUCTION_HOSTS:
+    CSRF_TRUSTED_ORIGINS.append(f"https://{host}")
+
+# Localhost for development
 if DEBUG:
     ALLOWED_HOSTS += ['localhost', '127.0.0.1']
     CSRF_TRUSTED_ORIGINS += [
@@ -482,7 +663,6 @@ WSGI_APPLICATION = 'Eco_Trio_Main.wsgi.application'
 
 # Database settings
 DATABASE_URL = os.environ.get('DATABASE_URL')
-
 if DATABASE_URL:
     DATABASES = {
         'default': dj_database_url.config(
@@ -540,16 +720,19 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Email settings
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
-EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER', 'ecotriosolutionweb@gmail.com')
-EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD', 'xaaq jgsx lizd tgqk')
+EMAIL_HOST = os.environ.get('EMAIL_HOST', 'smtp.gmail.com')
+EMAIL_PORT = int(os.environ.get('EMAIL_PORT', 587))
+EMAIL_USE_TLS = os.environ.get('EMAIL_USE_TLS', 'True') == 'True'
+EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER', 'your-email@gmail.com')
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD', 'your-app-password')
 ADMIN_EMAIL = EMAIL_HOST_USER
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 # Authentication settings
 SOCIALACCOUNT_LOGIN_ON_GET = True
 LOGIN_REDIRECT_URL = '/home/'
+
+# Force HTTPS redirects for allauth
+ACCOUNT_DEFAULT_HTTP_PROTOCOL = 'https'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

@@ -65,8 +65,8 @@ from django.contrib.auth import authenticate, login
 
 def signup_view(request):
     if request.method == "GET":
-        if not request.session.get('registered'):
-            return redirect('/register/')
+        # if not request.session.get('registered'):
+        #     return redirect('/register/')
         return render(request, 'signup.html')
 
     if request.method == 'POST':
@@ -105,7 +105,7 @@ def signup_view(request):
             login(request, authenticated_user)
             messages.success(request, f"Welcome {name}! Your account has been created.")
 
-        return redirect('home')
+        return redirect('signup')
 
     return render(request, 'signup.html')
 

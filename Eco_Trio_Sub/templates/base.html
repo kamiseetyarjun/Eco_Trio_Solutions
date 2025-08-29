@@ -604,7 +604,7 @@
                 </button>
                 <div id="guestDropdown" class="hidden absolute right-0 mt-2 w-32 bg-black text-white rounded shadow-md z-50">
                     <a href="{% url 'signin' %}" class="block px-4 py-2 hover:bg-gray hover:text-black">Sign In</a>
-                    <a href="{% url 'signup' %}" class="block px-4 py-2 hover:bg-gray hover:text-black">Sign Up</a>
+                    {% comment %} <a href="{% url 'signup' %}" class="block px-4 py-2 hover:bg-gray hover:text-black">Sign Up</a> {% endcomment %}
                 </div>
                 {% endif %}
             </div>
