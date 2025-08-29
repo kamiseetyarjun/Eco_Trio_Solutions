@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load socialaccount %}
+
+{% block title %}
+    Sign In - Eco Trio
+{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/agri_service.css' %}">
+{% endblock %}
+
+{% block body %}
+  <div class="flex justify-center items-center min-h-screen bg-black">
+    <div class="w-full max-w-md p-8 mt-8 bg-black shadow-md rounded-lg">
+      <h2 class="text-2xl font-semibold text-center mb-6 text-green-600">Sign In</h2>
+
+      <!-- Display error messages -->
+      {% if messages %}
+      <ul class="mb-4 text-sm">
+        {% for message in messages %}
+          <li 
+            class="
+              {% if message.tags == 'error' %} text-red-600
+              {% elif message.tags == 'success' %} text-green-600
+              {% elif message.tags == 'warning' %} text-yellow-600
+              {% else %} text-blue-600
+              {% endif %}
+            "
+          >
+            {{ message }}
+          </li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+
+
+      <form method="POST" class="grid grid-cols-1 gap-6">
+        {% csrf_token %}
+
+        <!-- Email -->
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+          <input 
+            type="email" 
+            name="email" 
+            placeholder="Enter your email"
+            class="w-full border border-gray-300 rounded-md px-4 py-2 text-gray-900 focus:outline-none focus:ring-2 focus:ring-green-500" 
+            required
+          />
+        </div>
+
+        <!-- Password -->
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1">Password</label>
+          <input 
+            type="password" 
+            name="password" 
+            placeholder="Enter your password"
+            class="w-full border border-gray-300 rounded-md px-4 py-2 text-gray-900 focus:outline-none focus:ring-2 focus:ring-green-500" 
+            required
+          />
+        </div>
+
+        <!-- Submit Button -->
+        <div>
+          <button 
+            type="submit" 
+            class="w-full bg-green-500 hover:bg-green-600 text-white font-medium py-2 rounded-md mt-2"
+          >
+            Sign In
+          </button>
+        </div>
+      </form>
+       {# --- Add Google Sign-In Here --- #}
+      <div class="divider" style = "margin-top:10px;">OR</div>
+
+      <a href="{% provider_login_url 'google' %}" 
+        style="display:inline-flex; align-items:center; gap:8px; padding:8px 12px; background-color:black; text-decoration:none; color:white; font-weight:500;">
+          <img src="{% static 'media/glogo.jpg' %}" 
+              alt="Google logo" 
+              style="width:30px; height:30px;"/>
+          Sign in with Google
+      </a>
+
+      {# --- End Google Sign-In --- #}
+
+      <!-- Sign Up Link -->
+      <p class="text-sm text-center text-gray-600 mt-4">
+        Don't have an account?
+        <a href="/signup" class="text-green-700 hover:underline">Sign Up</a>
+      </p>
+    </div>
+  </div>
+{% endblock %}
+
+{% block mainscript %}
+    <script src="{% static 'js/agri_service.js' %}"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+{% endblock %}

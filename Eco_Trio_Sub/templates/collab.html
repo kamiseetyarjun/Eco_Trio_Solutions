@@ -1,0 +1,467 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Collabration - Eco Trio{% endblock %}
+
+{% block css %}
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.1/dist/tailwind.min.css" rel="stylesheet">
+ <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f0f0f0;
+    }
+
+    .banner {
+      position: relative;
+      height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-align: center;
+      border-radius: 12px;
+      margin: 0px auto;
+      max-width: 960px;
+      padding: 0 20px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .overlay {
+      background: rgba(0, 0, 0, 0.3);
+      padding: 40px 30px;
+      border-radius: 12px;
+    }
+
+    .banner h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+
+    .banner p {
+      font-size: 1.1rem;
+      margin-bottom: 24px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      color: #f0f0f0;
+    }
+
+    .banner button {
+      background-color: #10b981; /* Green */
+      color: white;
+      font-size: 1rem;
+      font-weight: bold;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .banner button:hover {
+      background-color: #059669;
+    }
+
+     .impact-section {
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+        padding: 60px 40px;
+        background-color: black;
+        flex-wrap: wrap;
+    }
+
+    .impact-block {
+        background-color: #0e0e0e;
+        color: white;
+        border-radius: 16px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+        width: 100%;
+        max-width: 900px;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 30px;
+        box-sizing: border-box;
+    }
+
+    .impact-image img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        border-radius: 12px;
+        margin-bottom: 20px;
+    }
+
+    .impact-content h2 {
+        font-size: 24px;
+        font-weight: 700;
+        margin-bottom: 14px;
+        color: #10b981;
+        text-align: center;
+    }
+
+    .impact-content p {
+        font-size: 16px;
+        margin-bottom: 10px;
+        text-align: center;
+        color: #d1d1d1;
+    }
+
+    .impact-content ul {
+        list-style: disc;
+        padding-left: 20px;
+        text-align: left;
+        color: #cccccc;
+    }
+
+    .impact-content li {
+        margin-bottom: 8px;
+        font-size: 15px;
+    }
+
+    /* Responsive (stack vertically on mobile) */
+    @media (max-width: 768px) {
+    .impact-section {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .impact-block {
+        max-width: 100%;
+    }
+    }
+
+  </style>
+{% endblock %}
+
+{% block body %}
+<div class="bg-black py-12">
+    <div class="relative flex justify-center mt-[60px]">
+    <!-- Background Image -->
+    <img src="{% static 'media/Eco_rice_img.jpg' %}" alt="Eco Trio Field"
+        class="rounded-xl shadow-lg w-full max-w-4xl h-[400px] object-cover">
+
+    <!-- Centered Text Overlay -->
+    <div class="absolute inset-0 flex items-center justify-center px-4">
+      <div class="bg-black/60 p-6 md:p-10 rounded-xl shadow-lg text-center text-white max-w-2xl w-full">
+        <h1 class="text-2xl md:text-4xl font-extrabold mb-4 drop-shadow-lg">
+          Partner with Eco Trio Solutions
+        </h1>
+        <p class="text-sm md:text-lg mb-6 drop-shadow-md leading-relaxed">
+          Grow your business with our expert export and trade support. Join a network of successful
+          collaborators and expand your reach in the global market.
+        </p>
+        <a href="/register">
+          <button class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-6 rounded-lg transition">
+            Explore Partnership Opportunities
+          </button>
+        </a>
+      </div>
+    </div>
+  </div>
+
+<section class="bg-black text-white py-16 px-6 md:px-16" id="our_empowerments">
+  <div class="max-w-7xl mx-auto">
+    <h2 class="text-3xl md:text-4xl font-bold mb-2 text-white text-center">Our Collaborations</h2>
+    <p class="text-center text-gray-400 mb-8 ">
+        Explore more about our collaborations and their impact on various industries.
+      </p>
+    {% if collaborations %}
+      {% if collaborations|length == 1 %}
+        <!-- Single collaboration: center it -->
+        <div class="flex justify-center">
+          <div class="text-center">
+            <img src="{{ collaborations.0.logo.url }}" alt="{{ collaborations.0.title }}" class="rounded-xl mx-auto h-60 w-full object-cover shadow-lg mb-4 max-w-[300px]">
+            <h4 class="text-lg font-bold text-green-400">{{ collaborations.0.title }}</h4>
+            <p class="text-gray-300 text-sm mb-2">{{ collaborations.0.description }}</p>
+            {% if collaborations.0.website_link %}
+              <a href="{{ collaborations.0.website_link }}" target="_blank" class="text-green-500 hover:underline font-medium">Visit Website</a>
+            {% endif %}
+          </div>
+        </div>
+      {% else %}
+        <!-- Multiple collaborations in grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10 justify-items-center">
+          {% for collab in collaborations %}
+            <div class="text-center">
+              <img src="{{ collab.logo.url }}" alt="{{ collab.title }}" class="rounded-xl mx-auto h-60 w-full object-cover shadow-lg mb-4">
+              <h4 class="text-lg font-bold text-green-400">{{ collab.title }}</h4>
+              <p class="text-gray-300 text-sm mb-2">{{ collab.description }}</p>
+              {% if collab.website_link %}
+                <a href="{{ collab.website_link }}" target="_blank" class="text-green-500 hover:underline font-medium">Visit Website</a>
+              {% endif %}
+            </div>
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% else %}
+      <!-- No collaborations -->
+      <p class="text-center text-gray-400">Currently, there are no collaborations available.</p>
+    {% endif %}
+  </div>
+</section>
+
+  {% comment %} Why Collaborate with Us? {% endcomment %}
+  <section class="bg-black py-16 px-6 text-white" id = "why_collaborate">
+  <div class="max-w-6xl mx-auto text-center">
+    <!-- Heading -->
+    <h2 class="text-3xl font-semibold text-gray-300 mb-2">Why Collaborate with Us?</h2>
+    <h1 class="text-4xl md:text-5xl font-extrabold text-green-400 mb-4">Benefits of Partnering with Eco Trio</h1>
+    <p class="text-gray-300 max-w-3xl mx-auto mb-12">
+      Eco Trio Solutions offers comprehensive export and trade support, helping businesses
+      navigate international markets and achieve sustainable growth. Our collaborative
+      approach ensures mutual success and long-term partnerships.
+    </p>
+
+    <!-- Benefits Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <!-- Card 1 -->
+      <div class="bg-black border border-green-600 rounded-xl p-6 text-left">
+        <div class="text-2xl mb-4">👥</div>
+        <h3 class="font-bold text-white mb-2">Extensive Network</h3>
+        <p class="text-green-300">
+          Leverage our broad network of industry contacts and partners to expand your reach and connect
+          with key players in the global market.
+        </p>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="bg-black border border-green-600 rounded-xl p-6 text-left">
+        <div class="text-2xl mb-4">🌐</div>
+        <h3 class="font-bold text-white mb-2">Global Market Access</h3>
+        <p class="text-green-300">
+          Gain access to diverse international markets with our expert guidance and support, tailored to
+          your specific business needs and goals.
+        </p>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="bg-black border border-green-600 rounded-xl p-6 text-left">
+        <div class="text-2xl mb-4">🤝</div>
+        <h3 class="font-bold text-white mb-2">Trusted Expertise</h3>
+        <p class="text-green-300">
+          Benefit from our deep industry knowledge and experience, ensuring your export and trade operations
+          are efficient, compliant, and successful.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% comment %} Empowerment {% endcomment %}
+ <section class="bg-black py-16 px-6 text-white">
+  <div class="max-w-6xl mx-auto">
+    <!-- Section Heading -->
+    <h2 class="text-3xl font-extrabold mb-4">Empowerment Programs</h2>
+    <p class="text-gray-300 mb-10 max-w-3xl">
+      Eco Trio Solutions is dedicated to empowering individuals and communities through targeted programs that foster growth,
+      sustainability, and economic development.
+    </p>
+
+    <!-- Program List -->
+    <div class="space-y-10">
+
+      <!-- 1. Rural Youth Training -->
+      <div class="flex flex-col md:flex-row items-start gap-6">
+        <div class="flex-1">
+          <h3 class="font-bold text-lg">Rural Youth Training</h3>
+          <p class="text-green-300">
+            Equipping rural youth with essential skills for sustainable livelihoods through vocational training and mentorship.
+          </p>
+          <div class="mt-2 hidden text-gray-300" id="content-1">
+            <p>
+              This program includes hands-on training in areas such as digital literacy, sustainable farming, and local entrepreneurship. Youth are mentored by experts and connected with job opportunities or seed funding.
+            </p>
+          </div>
+          <button onclick="toggleContent('content-1')" class="mt-3 bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded">
+            Learn More
+          </button>
+        </div>
+        <img src="{% static 'media/youth_training.png' %}" alt="Youth Training" class="w-[200px] h-[120px] object-cover rounded-lg">
+      </div>
+
+      <!-- 2. MSME & Startup Support -->
+      <div class="flex flex-col md:flex-row items-start gap-6">
+        <div class="flex-1">
+          <h3 class="font-bold text-lg">MSME & Startup Support</h3>
+          <p class="text-green-300">
+            Supporting small enterprises with market access, funding guidance, and mentorship.
+          </p>
+          <div class="mt-2 hidden text-gray-300" id="content-2">
+            <p>
+              We help startups with business registration, financial planning, investor connections, and digital growth strategies. Dedicated mentors assist at every stage of scaling operations.
+            </p>
+          </div>
+          <button onclick="toggleContent('content-2')" class="mt-3 bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded">
+            Learn More
+          </button>
+        </div>
+        <img src="{% static 'media/msme_support.png' %}" alt="MSME Support" class="w-[200px] h-[120px] object-cover rounded-lg">
+      </div>
+
+      <!-- 3. Women in Agriculture -->
+      <div class="flex flex-col md:flex-row items-start gap-6">
+        <div class="flex-1">
+          <h3 class="font-bold text-lg">Women in Agriculture</h3>
+          <p class="text-green-300">
+            Empowering women through training, market linkages, and agri-business support.
+          </p>
+          <div class="mt-2 hidden text-gray-300" id="content-3">
+            <p>
+              This program helps women farmers access better tools, practices, and markets. Training in organic farming, food processing, and cooperative models improves productivity and income.
+            </p>
+          </div>
+          <button onclick="toggleContent('content-3')" class="mt-3 bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded">
+            Learn More
+          </button>
+        </div>
+        <img src="{% static 'media/women_agriculture.jpg' %}" alt="Women in Agriculture" class="w-[200px] h-[120px] object-cover rounded-lg">
+      </div>
+
+      <!-- 4. Volunteer & Internship Programs -->
+      <div class="flex flex-col md:flex-row items-start gap-6">
+        <div class="flex-1">
+          <h3 class="font-bold text-lg">Volunteer & Internship Programs</h3>
+          <p class="text-green-300">
+            Opportunities for youth and professionals to contribute to sustainable development.
+          </p>
+          <div class="mt-2 hidden text-gray-300" id="content-4">
+            <p>
+              Volunteers and interns engage in real-world impact projects including education, health awareness, green innovation, and social entrepreneurship. Certification and career guidance included.
+            </p>
+          </div>
+          <button onclick="toggleContent('content-4')" class="mt-3 bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded">
+            Learn More
+          </button>
+        </div>
+        <img src="{% static 'media/volunteer_program.jpg' %}" alt="Volunteers" class="w-[200px] h-[120px] object-cover rounded-lg">
+      </div>
+
+      <!-- 5. Investor & Partnership Linkages -->
+      <div class="flex flex-col md:flex-row items-start gap-6">
+        <div class="flex-1">
+          <h3 class="font-bold text-lg">Investor & Partnership Linkages</h3>
+          <p class="text-green-300">
+            Connecting impactful projects with the right partners for scaling and sustainability.
+          </p>
+          <div class="mt-2 hidden text-gray-300" id="content-5">
+            <p>
+              We connect social enterprises and projects with investors, CSR funds, and NGOs. Support includes pitch deck reviews, due diligence, and long-term partnership facilitation.
+            </p>
+          </div>
+          <button onclick="toggleContent('content-5')" class="mt-3 bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded">
+            Learn More
+          </button>
+        </div>
+        <img src="{% static 'media/partnerships.jpg' %}" alt="Partnerships" class="w-[200px] h-[120px] object-cover rounded-lg">
+      </div>
+
+    </div>
+  </div>
+</section>
+
+{% comment %} Why {% endcomment %}
+ <div class="impact-section" id = "who_can_join">
+  <div class="impact-block">
+    <div class="impact-image">
+      <img src="{% static 'media/program_impact.png' %}" alt="Program Goals Image" />
+    </div>
+    <div class="impact-content">
+      <h2>Program Impact Goals</h2>
+      <p>Our programs aim to achieve significant impact in the following areas:</p>
+      <ul>
+        <li>Increased income and economic opportunities for participants</li>
+        <li>Enhanced skills and employability</li>
+        <li>Sustainable practices and environmental stewardship</li>
+        <li>Community development and empowerment</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="impact-block">
+    <div class="impact-image">
+      <img src="{% static 'media/who_join.png' %}" alt="Who Can Join Image" />
+    </div>
+    <div class="impact-content">
+      <h2>Who Can Join?</h2>
+      <p>Our programs are designed for a diverse range of participants:</p>
+      <ul>
+        <li>Rural youth seeking vocational training</li>
+        <li>Entrepreneurs and startups in the MSME sector</li>
+        <li>Women involved in agriculture</li>
+        <li>Individuals interested in volunteering or internships</li>
+        <li>Investors and organizations seeking partnerships</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+{% comment %} JOB OPENINGS CODE {% endcomment %}
+<section class="bg-black py-12 px-4 text-white" id = "careers">
+  <h3 class="text-2xl md:text-3xl font-bold mb-10 text-center text-green-400">OPEN ROLES</h3>
+
+  {% if jobs %}
+    {% if jobs|length == 1 %}
+      <!-- Center the single job card -->
+      <div class="flex justify-center">
+        <div class="bg-gray-900 text-black rounded-2xl shadow-lg p-6 text-center hover:scale-105 transition duration-300 w-72">
+          <div class="flex justify-center mb-4">
+            <div class="bg-gray-100 p-4 rounded-full">
+              {% if jobs.0.icon %}
+                <img src="{{ jobs.0.icon.url }}" alt="icon" class="w-8 h-8">
+              {% else %}
+                <span class="text-2xl">💼</span>
+              {% endif %}
+            </div>
+          </div>
+          <h4 class="text-lg font-bold text-white mb-1">{{ jobs.0.title }}</h4>
+          <p class="text-white font-semibold mb-2">{{ jobs.0.location }}</p>
+          <a href="{% url 'apply_job' jobs.0.id %}" class="text-gray-600 hover:text-green-500 font-medium">Apply Now!</a>
+        </div>
+      </div>
+    {% else %}
+      <!-- Grid for multiple jobs -->
+      <div class="max-w-6xl mx-auto grid gap-8 justify-center sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+        {% for job in jobs %}
+        <div class="bg-gray-400 text-black rounded-2xl shadow-lg p-6 text-center hover:scale-105 transition duration-300 w-72">
+          <div class="flex justify-center mb-4">
+            <div class="bg-gray-100 p-4 rounded-full">
+              {% if job.icon %}
+                <img src="{{ job.icon.url }}" alt="icon" class="w-8 h-8">
+              {% else %}
+                <span class="text-2xl">💼</span>
+              {% endif %}
+            </div>
+          </div>
+          <h4 class="text-lg font-bold text-gray-900 mb-1">{{ job.title }}</h4>
+          <p class="text-indigo-700 font-semibold mb-2">{{ job.location }}</p>
+          <a href="{% url 'apply_job' job.id %}" class="text-gray-600 hover:text-green-500 font-medium">Apply Now!</a>
+        </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+  {% else %}
+    <!-- No jobs available -->
+    <p class="text-center text-gray-400 text-lg mt-10">Currently there are no openings.</p>
+  {% endif %}
+</section>
+
+</div>
+{% endblock %}
+
+
+
+{% block mainscript %}
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  function toggleContent(id) {
+    const content = document.getElementById(id);
+    content.classList.toggle('hidden');
+  }
+</script>
+{% endblock %}

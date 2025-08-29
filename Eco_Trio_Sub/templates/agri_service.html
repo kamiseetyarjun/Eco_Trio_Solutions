@@ -1,0 +1,241 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+    Agri Service - Eco Trio
+{% endblock %}
+
+{% block css %}
+
+{% endblock %}
+
+{% block body %}
+
+<section class="bg-black py-16 px-4 md:px-8">
+  <div class="max-w-6xl mx-auto text-center">
+    <h1 class="text-4xl font-semibold mt-[100px] text-white mb-2" id = "core_services">Our Core Services</h1>
+    <h2 class="text-4xl md:text-5xl font-extrabold text-green-400 mb-4">
+      Comprehensive Agricultural Solutions
+    </h2>
+    <p class="text-gray-300 max-w-2xl mx-auto mb-12">
+      We offer a wide range of services designed to meet the unique needs of your farm.
+      From crop planning to sustainable practices, we've got you covered.
+    </p>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 text-left">
+      
+      <!-- Card 1: Soil Testing -->
+      <div class="border border-green-700 bg-gray-900 p-6 rounded-lg shadow-sm hover:shadow-md transition hover:scale-105 transform duration-300">
+        <div class="text-green-400 text-2xl mb-4">🧪</div>
+        <h3 class="text-xl font-semibold text-white mb-2">Soil Testing & Analysis</h3>
+        <ul class="text-sm text-green-300 list-disc pl-4 space-y-1">
+          <li>Lab-based testing to understand soil fertility</li>
+          <li>Customized fertilizer & nutrient planning</li>
+        </ul>
+      </div>
+
+      <!-- Card 2: Crop Planning -->
+      <div class="border border-green-700 bg-gray-900 p-6 rounded-lg shadow-sm hover:shadow-md transition hover:scale-105 transform duration-300">
+        <div class="text-green-400 text-2xl mb-4">🌾</div>
+        <h3 class="text-xl font-semibold text-white mb-2">Crop Planning & Selection</h3>
+        <ul class="text-sm text-green-300 list-disc pl-4 space-y-1">
+          <li>Crop selection based on season, soil, and market demand</li>
+          <li>Rotation strategies for long-term yield improvement</li>
+        </ul>
+      </div>
+
+      <!-- Card 3: Pest Management -->
+      <div class="border border-green-700 bg-gray-900 p-6 rounded-lg shadow-sm hover:shadow-md transition hover:scale-105 transform duration-300">
+        <div class="text-green-400 text-2xl mb-4">🐛</div>
+        <h3 class="text-xl font-semibold text-white mb-2">Pest & Disease Management</h3>
+        <ul class="text-sm text-green-300 list-disc pl-4 space-y-1">
+          <li>Natural and scientific approaches for healthy crops</li>
+          <li>Regular monitoring and prevention methods</li>
+        </ul>
+      </div>
+
+      <!-- Card 4: Organic & Modern -->
+      <div class="border border-green-700 bg-gray-900 p-6 rounded-lg shadow-sm hover:shadow-md transition hover:scale-105 transform duration-300">
+        <div class="text-green-400 text-2xl mb-4">🌿</div>
+        <h3 class="text-xl font-semibold text-white mb-2">Organic & Modern Farming</h3>
+        <ul class="text-sm text-green-300 list-disc pl-4 space-y-1">
+          <li>Organic input usage & certification guidance</li>
+          <li>Greenhouse/polyhouse farming advice</li>
+          <li>Precision farming tools</li>
+        </ul>
+      </div>
+
+      <!-- Card 5: Water Support -->
+      <div class="border border-green-700 bg-gray-900 p-6 rounded-lg shadow-sm hover:shadow-md transition hover:scale-105 transform duration-300">
+        <div class="text-green-400 text-2xl mb-4">💧</div>
+        <h3 class="text-xl font-semibold text-white mb-2">Water & Irrigation Support</h3>
+        <ul class="text-sm text-green-300 list-disc pl-4 space-y-1">
+          <li>Drip/sprinkler system planning</li>
+          <li>Water budgeting and moisture management</li>
+          <li>Rainwater harvesting techniques</li>
+        </ul>
+      </div>
+
+      <!-- Card 6: Advisory & Training -->
+      <div class="border border-green-700 bg-gray-900 p-6 rounded-lg shadow-sm hover:shadow-md transition hover:scale-105 transform duration-300">
+        <div class="text-green-400 text-2xl mb-4">🧑‍🏫</div>
+        <h3 class="text-xl font-semibold text-white mb-2">Farm Advisory & Training</h3>
+        <ul class="text-sm text-green-300 list-disc pl-4 space-y-1">
+          <li>Personalized consultations</li>
+          <li>On-ground demonstrations & workshops</li>
+          <li>Remote support via phone/WhatsApp</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Section: Image Right, Text Left -->
+<div class="mt-10 px-4 md:px-20 py-12 bg-black text-white">
+  <div class="grid md:grid-cols-2 gap-10 items-center">
+
+    <!-- Text Content -->
+    <div>
+      <h2 class="text-3xl font-bold mb-4 text-[#00ff99]">Empowering Agri-Futures</h2>
+      <p class="mb-4 text-gray-300">
+        At EcoTrio, we believe that sustainable agriculture is the foundation for a better tomorrow.
+        Our services are designed to empower farmers and agri-startups with practical tools and global exposure.
+      </p>
+      <ul class="list-disc list-inside text-gray-400">
+        <li>Real-time Agri Expert Consultations</li>
+        <li>Branding for International Export Markets</li>
+        <li>Workshops on Green Farming Practices</li>
+        <li>Tailored Training Programs</li>
+      </ul>
+    </div>
+
+    <!-- Image on Right -->
+    <div class="rounded-lg overflow-hidden shadow-lg">
+      <img src="{%static 'media/AI_Bio.png'%}" alt="EcoTrio Future" class="w-full h-auto object-cover">
+    </div>
+
+  </div>
+</div>
+
+</section>
+<section class="bg-black py-16 px-4 md:px-12">
+  <div class="max-w-6xl mx-auto text-center">
+    <h2 class="text-lg font-semibold text-white mb-2" id = "benefits">Benefits of Our Services</h2>
+    <h1 class="text-3xl md:text-4xl font-extrabold text-white mb-4">
+      Maximize Your Farm's Potential
+    </h1>
+    <p class="text-gray-300 mb-12 max-w-3xl mx-auto">
+      Our services are designed to deliver tangible benefits, from increased productivity to reduced costs and a positive impact on the environment.
+    </p>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 text-left">
+      
+      <!-- Card 1 -->
+      <div class="border border-gray-700 bg-gray-900 p-6 rounded-lg">
+        <div class="text-2xl text-white mb-4">🏹</div>
+        <h3 class="text-lg font-bold text-white mb-2">Increased Yields</h3>
+        <p class="text-green-400 text-sm">
+          Achieve higher crop yields with our expert guidance and optimized strategies.
+        </p>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="border border-gray-700 bg-gray-900 p-6 rounded-lg">
+        <div class="text-2xl text-white mb-4">⚙️</div>
+        <h3 class="text-lg font-bold text-white mb-2">Cost Efficiency</h3>
+        <p class="text-green-400 text-sm">
+          Reduce operational costs through efficient resource management and smart farming techniques.
+        </p>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="border border-gray-700 bg-gray-900 p-6 rounded-lg">
+        <div class="text-2xl text-white mb-4">🍃</div>
+        <h3 class="text-lg font-bold text-white mb-2">Environmental Impact</h3>
+        <p class="text-green-400 text-sm">
+          Minimize your environmental footprint with our sustainable and eco-friendly practices.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+<section class="bg-black py-16 px-4 md:px-12">
+  <div class="max-w-6xl mx-auto text-center">
+    <h2 class="text-lg font-semibold text-white mb-2" id = "why_choose">Why Choose EcoTrio?</h2>
+    <h1 class="text-3xl md:text-4xl font-extrabold text-white mb-4">
+      Your Trusted Partner in Agriculture
+    </h1>
+    <p class="text-gray-300 mb-12 max-w-3xl mx-auto">
+      With AgriConsult, you gain a dedicated partner committed to your success.
+      Our expertise, proven results, and unwavering support set us apart.
+    </p>
+
+    <!-- Features List (No Cards) -->
+    <div class="flex flex-col md:flex-row justify-between gap-12 text-left max-w-5xl mx-auto">
+      
+      <!-- Feature 1 -->
+      <div class="flex items-start gap-4">
+        <div class="text-3xl text-green-400">👨‍🌾</div>
+        <div>
+          <h3 class="text-lg font-semibold text-white mb-1">Experienced Consultants</h3>
+          <p class="text-gray-400 text-sm">
+            Our team of seasoned agricultural experts brings years of experience to every project.
+          </p>
+        </div>
+      </div>
+
+      <!-- Feature 2 -->
+      <div class="flex items-start gap-4">
+        <div class="text-3xl text-green-400">📈</div>
+        <div>
+          <h3 class="text-lg font-semibold text-white mb-1">Proven Track Record</h3>
+          <p class="text-gray-400 text-sm">
+            We have a history of delivering successful outcomes for farms of all sizes.
+          </p>
+        </div>
+      </div>
+
+      <!-- Feature 3 -->
+      <div class="flex items-start gap-4">
+        <div class="text-3xl text-green-400">🛡️</div>
+        <div>
+          <h3 class="text-lg font-semibold text-white mb-1">Reliable Support</h3>
+          <p class="text-gray-400 text-sm">
+            Count on us for ongoing support and guidance throughout your farming journey.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+<!-- Section: Image with Side Text -->
+<div class="mt-10 px-4 md:px-20 py-10 bg-black text-white">
+  <div class="grid md:grid-cols-2 gap-8 items-center">
+
+    <!-- Image Section -->
+    <div class="rounded-lg overflow-hidden shadow-lg">
+      <img src="{%static 'media/Eco_Ai.png'%}" alt="EcoTrio Sample" class="w-full h-auto object-cover">
+    </div>
+
+    <!-- Text Content Section -->
+    <div>
+      <h2 class="text-3xl font-bold mb-4" style="color:#00ff99;">Why Choose EcoTrio?</h2>
+      <p class="mb-4 text-gray-300">
+        EcoTrio is committed to revolutionizing agriculture through sustainable practices, expert consultation, and export branding. We empower farmers and agri-entrepreneurs to scale their impact.
+      </p>
+      <ul class="list-disc list-inside text-gray-400">
+        <li>Agri Consultation & Training</li>
+        <li>Export-Ready Branding Support</li>
+        <li>Community-Driven Growth</li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+</section>
+
+{% endblock %}
+
+{% block mainscript %}
+  <script src="https://cdn.tailwindcss.com"></script>
+{% endblock %}

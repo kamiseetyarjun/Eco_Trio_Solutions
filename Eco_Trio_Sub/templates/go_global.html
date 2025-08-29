@@ -1,0 +1,175 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Go_Global - Eco Trio{% endblock %}
+
+{% block css %}
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.1/dist/tailwind.min.css" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+
+<section class="bg-black py-20 px-4 md:px-8">
+  <div class="max-w-6xl mx-auto text-center">
+    
+    <!-- Heading -->
+    <h1 class="text-3xl md:text-4xl font-bold text-white mb-4 mt-20" id = "export_trade">
+      Export & Trade Support
+    </h1>
+
+    <!-- Subheading / Tagline -->
+    <h2 class="text-2xl md:text-3xl font-semibold text-green-400 mb-6">
+      Global Reach. Smooth Logistics. Clear Compliance.
+    </h2>
+
+    <!-- Description -->
+    <p class="text-gray-300 text-base md:text-lg max-w-3xl mx-auto leading-relaxed">
+      India’s agriculture has the power to feed not just our nation—but the world. At 
+      <span class="text-green-400 font-semibold">Eco Trio Solutions</span>, we provide complete Export & Trade Support to help farmers, FPOs, and agri-entrepreneurs access global markets with confidence and compliance.
+      <br /><br />
+      We believe in turning local produce into global opportunities.
+    </p>
+
+  </div>
+</section>
+
+<section class="bg-black  px-4 md:px-10">
+  <div class="max-w-7xl mx-auto text-white">
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-16" id = "trade_services">
+      Our Export & Trade Services
+    </h2>
+
+    <div class="max-w-4xl mx-auto px-4">
+
+  <!-- Item 1 -->
+  <div class="flex flex-col md:flex-row items-center gap-6 mb-12">
+    <div class="md:w-2/3">
+      <h3 class="text-xl font-semibold text-green-400 mb-2">Agri Product Export Assistance</h3>
+      <p class="text-gray-300">
+        We help identify high-demand crops by analyzing global trends and trade reports to maximize export potential.
+        Our market research provides insights into country-specific buyer needs, pricing, and regulations.
+        This ensures farmers and exporters can align production with international demand effectively.
+      </p>
+    </div>
+    <img src="{% static 'media/Agri.png' %}" alt="Private Labeling"
+         class="md:w-1/3 w-full h-48 object-cover rounded-lg shadow-md" />
+  </div>
+
+  <!-- Item 2 -->
+  <div class="flex flex-col md:flex-row-reverse items-center gap-6 mb-12">
+    <div class="md:w-2/3">
+      <h3 class="text-xl font-semibold text-green-400 mb-2">Farmer Produce Aggregation</h3>
+      <p class="text-gray-300">
+        We aggregate produce from smallholder farmers to ensure sufficient volume for export.
+        Our team ensures strict quality control through grading, sorting, and standardization processes.
+        Each batch is hygienically packaged in bulk to meet international standards and buyer expectations.
+      </p>
+    </div>
+    <img src="{% static 'media/Farmer.png' %}" alt="Freight"
+         class="md:w-1/3 w-full h-48 object-cover rounded-lg shadow-md" />
+  </div>
+
+  <!-- Item 3 -->
+  <div class="flex flex-col md:flex-row items-center gap-6 mb-12">
+    <div class="md:w-2/3">
+      <h3 class="text-xl font-semibold text-green-400 mb-2">Export Compliance & Documentation</h3>
+      <p class="text-gray-300">
+        We assist exporters in obtaining mandatory certifications like FSSAI, APEDA, IEC, and phytosanitary approvals.
+        Our experts handle all customs documentation and invoicing with precision.
+        From compliance to coordination, we streamline every step for smooth export logistics.
+      </p>
+    </div>
+    <img src="{% static 'media/Export.png' %}" alt="Labeling"
+         class="md:w-1/3 w-full h-48 object-cover rounded-lg shadow-md" />
+  </div>
+
+  <!-- Item 4 -->
+  <div class="flex flex-col md:flex-row-reverse items-center gap-6 mb-12">
+    <div class="md:w-2/3">
+      <h3 class="text-xl font-semibold text-green-400 mb-2">Branding & Packaging for Export</h3>
+      <p class="text-gray-300">
+        We provide expert branding and packaging solutions tailored for export markets.
+        Our services include export-ready labeling and product packaging design that meets global standards.
+        We also offer private labeling options to cater to the specific needs of international buyers.
+      </p>
+    </div>
+    <img src="{% static 'media/Branding.png' %}" alt="Grading"
+         class="md:w-1/3 w-full h-48 object-cover rounded-lg shadow-md" />
+  </div>
+
+  <!-- Item 5 -->
+  <div class="flex flex-col md:flex-row items-center gap-6 mb-12">
+    <div class="md:w-2/3">
+      <h3 class="text-xl font-semibold text-green-400 mb-2">Buyer Linkage & Trade Networking</h3>
+      <p class="text-gray-300">
+        We facilitate connections with verified importers to ensure reliable export opportunities.
+        Our team supports participation in global trade fairs and expos to showcase your products internationally.
+        Additionally, we assist with B2B meetings and trade negotiations to help secure profitable deals.
+      </p>
+    </div>
+    <img src="{% static 'media/Buyer.png' %}" alt="Certificates"
+         class="md:w-1/3 w-full h-48 object-cover rounded-lg shadow-md" />
+  </div>
+
+  <!-- Item 6 -->
+  <div class="flex flex-col md:flex-row-reverse items-center gap-6 mb-12">
+    <div class="md:w-2/3">
+      <h3 class="text-xl font-semibold text-green-400 mb-2">End-to-End Export Logistics Support</h3>
+      <p class="text-gray-300">
+        We offer cold storage and transportation solutions to maintain the quality of perishable goods.
+        Our freight forwarding services cover both air and sea logistics for efficient global shipment.
+        Real-time tracking and delivery management ensure transparency and timely delivery at every stage.
+      </p>
+    </div>
+    <img src="{% static 'media/Eco_Ai.png' %}" alt="B2B"
+         class="md:w-1/3 w-full h-48 object-cover rounded-lg shadow-md" />
+  </div>
+
+</div>
+
+
+    <!-- Add more items in the same pattern if needed -->
+
+  </div>
+  <section class="bg-black py-16 px-4 md:px-12 text-white">
+  <div class="max-w-4xl mx-auto space-y-16 text-center">
+
+    <!-- What We Export -->
+    <div>
+      <h2 class="text-2xl font-bold mb-2 text-green-400" id = "what_we_export">What We Export</h2>
+      <p class="text-gray-300">
+        We specialize in the export of high-quality agricultural products, including fresh produce, grains, spices, and processed foods. Our extensive network of suppliers and buyers ensures access to a wide range of products and markets.
+      </p>
+    </div>
+
+    <!-- Who We Support -->
+    <div>
+      <h2 class="text-2xl font-bold mb-2 text-green-400">Who We Support</h2>
+      <p class="text-gray-300">
+        We support a diverse range of clients, including farmers, producers, processors, and traders. Whether you are a small-scale farmer or a large agricultural enterprise, we provide tailored solutions to meet your specific export needs.
+      </p>
+    </div>
+
+    <!-- Why Choose Eco Trio -->
+    <div>
+    <div class="flex justify-center mb-6" id = "why_support">
+        <img src="{% static 'media/Who.png' %}" alt="Why Choose Us" class="w-full max-w-5xl h-48 object-cover shadow-lg">
+    </div>
+
+      <h2 class="text-2xl font-bold mb-2 text-green-400">Why Choose Eco Trio for Export Support?</h2>
+      <p class="text-gray-300">
+        With years of experience in the export and trade industry, Eco Trio Solutions offers unparalleled expertise and support. Our commitment to quality, reliability, and customer satisfaction ensures that your export transactions are handled with the utmost professionalism and care. Partner with us to unlock new opportunities and achieve success in the global market.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+</section>
+
+
+{% endblock %}
+
+{% block mainscript %}
+<script src="https://cdn.tailwindcss.com"></script>
+{% endblock %}

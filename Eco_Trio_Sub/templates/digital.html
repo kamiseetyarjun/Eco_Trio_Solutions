@@ -1,0 +1,174 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Digital_Grow - Eco Trio{% endblock %}
+
+{% block css %}
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.1/dist/tailwind.min.css" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+<section class="relative bg-black rounded-xl overflow-hidden">
+  <!-- Background Image -->
+  <div class="absolute inset-0">
+    <img src="{% static 'media/digital.png' %}" alt="Branding Background"
+         class="w-full h-full object-cover opacity-70" />
+    <div class="absolute inset-0 bg-black opacity-50"></div>
+  </div>
+
+  <!-- Content -->
+  <div class="relative z-10 text-center py-24 px-4 md:px-12 text-white">
+    <h1 class="text-3xl md:text-5xl font-bold mb-4 mt-4" id = "branding_services">Digital & Branding Services</h1>
+    <p class="text-lg md:text-xl mb-8">
+      Elevate your brand with our comprehensive digital and branding solutions tailored for the agriculture and rural sectors.
+    </p>
+    <a href="/agri_services" class="inline-block bg-green-500 hover:bg-green-600 text-black font-semibold px-6 py-3 rounded-lg transition">
+      Explore Services
+    </a>
+  </div>
+</section>
+<section class="bg-black py-16 px-4 md:px-12 text-white">
+  <div class="max-w-6xl mx-auto">
+
+    <!-- Title -->
+    <h2 class="text-3xl md:text-4xl font-bold mb-4">Comprehensive Digital Solutions</h2>
+    <p class="text-gray-400 mb-10">
+      We offer a range of services to enhance your digital presence and brand identity.
+    </p>
+
+    <!-- Cards Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      
+      <!-- Card 1 -->
+      <div class="bg-black border border-gray-700 rounded-xl p-6 hover:border-green-500 transition">
+        <div class="text-2xl mb-3">🖊️</div>
+        <h3 class="text-white font-semibold text-lg mb-1">Logo Design</h3>
+        <p class="text-gray-400">
+          Crafting unique and memorable logos that represent your brand's values and vision.
+        </p>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="bg-black border border-gray-700 rounded-xl p-6 hover:border-green-500 transition">
+        <div class="text-2xl mb-3">🌐</div>
+        <h3 class="text-white font-semibold text-lg mb-1">Website Development</h3>
+        <p class="text-gray-400">
+          Building responsive and user-friendly websites that effectively showcase your products and services.
+        </p>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="bg-black border border-gray-700 rounded-xl p-6 hover:border-green-500 transition">
+        <div class="text-2xl mb-3">🔍</div>
+        <h3 class="text-white font-semibold text-lg mb-1">Search Engine Optimization (SEO)</h3>
+        <p class="text-gray-400">
+          Improving your website's visibility in search engine results to attract more organic traffic.
+        </p>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="bg-black border border-gray-700 rounded-xl p-6 hover:border-green-500 transition">
+        <div class="text-2xl mb-3">👥</div>
+        <h3 class="text-white font-semibold text-lg mb-1" id = "social_media">Social Media Management</h3>
+        <p class="text-gray-400">
+          Managing your social media platforms to engage with your audience and build a strong online community.
+        </p>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="bg-black border border-gray-700 rounded-xl p-6 hover:border-green-500 transition">
+        <div class="text-2xl mb-3">📄</div>
+        <h3 class="text-white font-semibold text-lg mb-1">Content Creation</h3>
+        <p class="text-gray-400">
+          Creating compelling and informative content that resonates with your target audience.
+        </p>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="bg-black border border-gray-700 rounded-xl p-6 hover:border-green-500 transition">
+        <div class="text-2xl mb-3">💬</div>
+        <h3 class="text-white font-semibold text-lg mb-1">Digital Consultation</h3>
+        <p class="text-gray-400">
+          Providing expert advice and guidance on your digital strategy to achieve your business goals.
+        </p>
+      </div>
+
+    </div>
+  </div>
+
+{% comment %} Why it matters {% endcomment %}
+ <section class="bg-black text-white py-12 px-4 md:px-12">
+  <div class="max-w-4xl mx-auto text-center">
+    <h2 class="text-3xl md:text-4xl text-green-500 font-bold mb-6" id = "why_matters">💡 Why It Matters</h2>
+    
+    <p class="text-lg text-white leading-relaxed">
+        Building credibility and trust is essential in today's competitive agri-business landscape. 
+        A strong digital presence attracts more customers and gives agri-startups a professional edge
+        that sets them apart. It also helps build long-term export partnerships and opens doors to global 
+        market opportunities. Enhancing visibility for rural entrepreneurs allows them to reach wider 
+        audiences, while connecting farmers to urban and international buyers bridges critical market gaps.
+        Additionally, it promotes transparency and traceability in supply chains, ensuring quality and 
+        reliability across every step of the process.
+    </p>
+
+  </div>
+</section>
+<section class="bg-black text-white py-16 px-4 md:px-12">
+  <div class="max-w-6xl mx-auto">
+
+    <!-- Who We Serve -->
+    <h2 class="text-2xl md:text-3xl font-semibold text-green-500 mb-2">Who We Serve</h2>
+    <p class="text-gray-300 mb-6">Our services are designed to meet the unique needs of various stakeholders in the agriculture and rural sectors, including:</p>
+
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+      <div class="border border-gray-600 rounded-lg py-4 px-3 text-center hover:border-green-400 transition">
+        <span class="block text-lg">👨‍🌾 Farmers</span>
+      </div>
+      <div class="border border-gray-600 rounded-lg py-4 px-3 text-center hover:border-green-400 transition">
+        <span class="block text-lg">🚜 Agri-Startups</span>
+      </div>
+      <div class="border border-gray-600 rounded-lg py-4 px-3 text-center hover:border-green-400 transition">
+        <span class="block text-lg">🏢 MSMEs</span>
+      </div>
+      <div class="border border-gray-600 rounded-lg py-4 px-3 text-center hover:border-green-400 transition">
+        <span class="block text-lg">🌱 Rural Entrepreneurs</span>
+      </div>
+    </div>
+
+    <!-- Benefits of Our Services -->
+    <h2 class="text-2xl md:text-3xl font-semibold text-green-500 mb-2">Benefits of Our Services</h2>
+
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+      <div class="border border-gray-600 rounded-lg py-4 px-3 text-center hover:border-green-400 transition">
+        <span class="block text-lg">📈 Increased Visibility</span>
+      </div>
+      <div class="border border-gray-600 rounded-lg py-4 px-3 text-center hover:border-green-400 transition">
+        <span class="block text-lg">🔍 Enhanced Brand Recognition</span>
+      </div>
+      <div class="border border-gray-600 rounded-lg py-4 px-3 text-center hover:border-green-400 transition">
+        <span class="block text-lg">🤝 Improved Customer Engagement</span>
+      </div>
+      <div class="border border-gray-600 rounded-lg py-4 px-3 text-center hover:border-green-400 transition">
+        <span class="block text-lg">🌍 Sustainable Growth</span>
+      </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="text-center mt-12">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Ready to Transform Your Brand?</h2>
+      <p class="text-gray-300 mb-6">Contact us today to discuss your digital and branding needs and how we can help you succeed.</p>
+      <a href="/contact" class="bg-green-500 text-black font-semibold px-6 py-3 rounded hover:bg-green-600 transition">Contact Us</a>
+    </div>
+
+  </div>
+</section>
+
+
+</section>
+
+
+{% endblock %}
+
+{% block mainscript %}
+<script src="https://cdn.tailwindcss.com"></script>
+{% endblock %}

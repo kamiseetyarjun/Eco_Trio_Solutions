@@ -1,0 +1,129 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Our_Team - Eco Trio{% endblock %}
+
+{% block css %}
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.1/dist/tailwind.min.css" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+<section class="bg-black text-white py-16 px-4 md:px-12">
+  <div class="max-w-6xl mx-auto">
+
+    <!-- About Section -->
+    <h2 class="text-3xl md:text-4xl font-bold mb-4 mt-[60px]">About Eco Trio Solutions</h2>
+    <p class="text-gray-300 mb-10">
+      Eco Trio Solutions is dedicated to transforming agriculture through innovative and sustainable solutions.
+      Our mission is to empower farmers with the tools and knowledge they need to thrive in a changing world.
+      We believe in a holistic approach that combines cutting-edge technology with traditional farming wisdom
+      to create a more resilient and productive agricultural sector.
+    </p>
+
+    <!-- Our Team Section -->
+   <h3 class="text-2xl md:text-3xl font-semibold mb-6 text-green-400">Our Team</h3>
+
+    <div class="flex flex-wrap justify-center gap-10 mb-10">
+      {% for member in team_members %}
+      <div class="text-center w-full sm:w-1/2 md:w-1/3 max-w-sm">
+        <img src="{{ member.image.url }}" 
+            alt="{{ member.name }}" 
+            class="w-60 h-60 mx-auto rounded-full mb-4 object-cover">
+        <h4 class="text-lg font-semibold">{{ member.name }}</h4>
+        <p class="text-green-400">{{ member.role }}</p>
+      </div>
+      {% endfor %}
+    </div>
+
+
+
+    <!-- Static Team Description -->
+    <p class="text-gray-300 mb-12">
+      Meet Our Core Team – Eco Trio Solutions
+      At Eco Trio Solutions, our leadership team is the backbone of our mission to empower farmers with sustainable, tech-driven, and profitable agriculture practices.
+      Mr. Arjun Kamisetty – Founder & Agri Consultant
+      With deep experience in farmer engagement and grassroots agriculture solutions, Arjun leads our mission to make agri-innovation accessible across rural India.
+    </p>
+
+    <!-- Our Values Section -->
+    <h3 class="text-2xl md:text-3xl font-semibold mb-6 text-green-400">Our Values</h3>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+      <div class="border border-gray-700 rounded-lg p-6 bg-gray-900">
+        <div class="text-3xl mb-3">🌿</div>
+        <h4 class="text-xl font-semibold mb-2">Sustainability</h4>
+        <p class="text-gray-400 text-sm">
+          We are committed to environmentally responsible practices that protect our planet for future generations.
+        </p>
+      </div>
+      <div class="border border-gray-700 rounded-lg p-6 bg-gray-900">
+        <div class="text-3xl mb-3">⚡</div>
+        <h4 class="text-xl font-semibold mb-2">Empowerment</h4>
+        <p class="text-gray-400 text-sm">
+          We empower farmers with the knowledge and resources they need to succeed in a dynamic agricultural landscape.
+        </p>
+      </div>
+      <div class="border border-gray-700 rounded-lg p-6 bg-gray-900">
+        <div class="text-3xl mb-3">🤝</div>
+        <h4 class="text-xl font-semibold mb-2">Collaboration</h4>
+        <p class="text-gray-400 text-sm">
+          We believe in working closely with farmers, partners, and communities to create a thriving agricultural ecosystem.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Innovative Solutions Section -->
+<section class="bg-black text-white py-20 px-6 md:px-16">
+  <div class="max-w-7xl mx-auto text-center mb-16">
+    <h2 class="text-3xl md:text-4xl font-bold mb-4">Innovative Solutions</h2>
+    <p class="text-gray-300 max-w-3xl mx-auto text-base md:text-lg">
+      At <span class="text-green-400 font-semibold">EcoTrioSolutions</span>, we believe innovation is the key to transforming agriculture.
+      We provide cutting-edge solutions that help farmers increase productivity, reduce waste, and make better decisions —
+      all while staying sustainable and affordable.
+    </p>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-14">
+    <!-- Card 1 -->
+    <div class="text-center">
+      <img src="{% static 'media/team1.jpeg' %}" alt="Soil Health" class="rounded-xl w-full h-72 md:h-[320px] object-cover shadow-lg mb-4">
+      <h4 class="text-xl font-semibold mb-1">Soil Health & Crop Planning Tools</h4>
+      <p class="text-gray-400 text-sm">GPS-based testing, mobile-friendly advice, and custom crop calendars.</p>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="text-center">
+      <img src="{% static 'media/team2.jpeg' %}" alt="Irrigation" class="rounded-xl w-full h-72 md:h-[320px] object-cover shadow-lg mb-4">
+      <h4 class="text-xl font-semibold mb-1">Smart Irrigation Support</h4>
+      <p class="text-gray-400 text-sm">Drip design, automation, and efficient water use techniques.</p>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="text-center">
+      <img src="{% static 'media/team3.jpeg' %}" alt="Grading" class="rounded-xl w-full h-72 md:h-[320px] object-cover shadow-lg mb-4">
+      <h4 class="text-xl font-semibold mb-1">Export-Ready Grading & Packaging Systems</h4>
+      <p class="text-gray-400 text-sm">Helping farmers meet international quality standards.</p>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="text-center">
+      <img src="{% static 'media/Eco_Ai.png' %}" alt="Branding" class="rounded-xl w-full h-72 md:h-[320px] object-cover shadow-lg mb-4">
+      <h4 class="text-xl font-semibold mb-1">Agri Branding & Digital Tools</h4>
+      <p class="text-gray-400 text-sm">Customized logos, websites, and digital identity for FPOs & rural brands.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="bg-black text-white py-20 px-6 md:px-16 text-center">
+  <h2 class="text-3xl md:text-4xl font-bold mb-4">Ready to Learn More?</h2>
+  <p class="text-gray-300 mb-6">Contact us today to discuss your digital and branding needs and how we can help you succeed.</p>
+  <a href="/contact" class="bg-green-500 text-black font-semibold px-6 py-3 rounded hover:bg-green-600 transition">Contact Us</a>
+</section>
+{% endblock %}
+
+{% block mainscript %}
+<script src="https://cdn.tailwindcss.com"></script>
+{% endblock %}

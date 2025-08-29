@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Signup Successful{% endblock %}
+
+{% block css %}
+  <script src="https://cdn.tailwindcss.com"></script>
+{% endblock %}
+
+{% block body %}
+<body class="bg-green-100 flex items-center justify-center min-h-screen">
+
+  <!-- Success Box -->
+  <div class="bg-white p-8 rounded-lg shadow-lg text-center max-w-md w-full">
+    <h1 class="text-2xl font-bold text-green-600">Signup Successful!</h1>
+    <p class="mt-2 text-gray-700">Thank you for registering with <strong>Eco Trio Solutions</strong>.</p>
+    <a href="/signin" class="inline-block mt-6 px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600">
+      Go to Sign In
+    </a>
+  </div>
+
+  <!-- Audio Element -->
+  {% if play_sound %}
+    <audio id="successSound" autoplay>
+      <source src="{% static 'audio/success.mp3' %}" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+  {% endif %}
+
+  <!-- Toast Notification -->
+  <div id="toast" class="hidden fixed top-6 right-6 bg-green-500 text-white px-4 py-2 rounded shadow-lg z-50">
+    ✅ New user signed up!
+  </div>
+
+</body>
+{% endblock %}
+
+{% block mainscript %}
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const toast = document.getElementById("toast");
+    const sound = document.getElementById("successSound");
+
+    if (toast && sound) {
+      // Show toast
+      toast.classList.remove("hidden");
+
+      // Try playing sound (in case autoplay gets blocked)
+      sound.play().catch(err => {
+        console.warn("Autoplay blocked. User interaction may be required.", err);
+      });
+
+      // Hide toast after 4 seconds
+      setTimeout(() => {
+        toast.classList.add("hidden");
+      }, 4000);
+    }
+  });
+</script>
+{% endblock %}

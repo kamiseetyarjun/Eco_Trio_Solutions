@@ -1,0 +1,150 @@
+.hero-wrapper {
+    background-color: #000000;
+}
+
+.hero-wrapper .hero-section {
+    background-color: #000000;
+    transition: background-color 0.3s ease;
+}
+
+.hero-wrapper .hero-section:hover {
+    background-color: #00ff99;
+    color: #000000;
+}
+
+.hero-wrapper .hero-btn {
+    background-color: #000000;
+    color: #00ff99;
+    border: 2px solid #00ff99;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.hero-wrapper .hero-btn:hover {
+    background-color: #00ff99;
+    color: #000000;
+    border-color: #000000;
+}
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.eco-title {
+  font-weight: 900;
+  font-size: 1.5rem;
+  color: #e0e0e0;
+}
+
+.eco-subtitle {
+  font-size: 0.7rem;
+  font-weight: normal;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  position: relative;
+  padding-left: 20px;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #2ecc71;
+}
+
+.nav-links a:hover::before,
+.nav-links a.active::before {
+  content: "➤";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 16px;
+  color: #2ecc71;
+}
+
+.nav-links a.active {
+  color: #2ecc71;
+}
+
+.nav-links .profile-menu {
+  position: relative;
+}
+
+.nav-links .profile-icon {
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding-left: 20px;
+  transition: color 0.3s ease;
+}
+
+.nav-links .dropdown {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: rgba(17, 17, 17, 0.9);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);         /* Blur effect */
+  -webkit-backdrop-filter: blur(12px); /* Safari support */
+  border-radius: 4px;
+  margin-top: 0.5rem;
+  min-width: 90px;
+  z-index: 1001;
+}
+
+.nav-links .dropdown a {
+  display: block;
+  padding: 0.3rem 0.8rem;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.nav-links .dropdown a:hover {
+  background-color: #2ecc71;
+  color: black;
+}
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.nav-toggle span {
+  height: 3px;
+  width: 25px;
+  background: white;
+  margin: 4px 0;
+  border-radius: 2px;
+}
+
+/* Responsive behavior */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    padding: 1rem;
+    margin-top: 1rem;
+  }
+
+  nav.show-menu .nav-links {
+    display: flex;
+  }
+
+  .nav-toggle {
+    display: flex;
+  }
+}
